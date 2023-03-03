@@ -1,21 +1,5 @@
 <script>
-  import Web3 from 'web3';
-  import Contract from './Contract.json';
-  
-  const web3 = new Web3(Web3.givenProvider);
-  const contract = new web3.eth.Contract(Contract.abi, Contract.address);
-  
-  let message = '';
-  async function setMessage() {
-    await contract.methods.setMessage(message).send({ from: web3.eth.accounts[0] });
-  }
-  
-  async function getMessage() {
-    const result = await contract.methods.getMessage().call();
-    message = result;
-  }
-  
-  getMessage();
+
 </script>
 
 <main>
